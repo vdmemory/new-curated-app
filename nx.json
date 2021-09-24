@@ -1,0 +1,53 @@
+{
+  "npmScope": "new-curated-app",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "Nzc2ZDNjMzktMzdhZS00YTNjLWJjMjUtOWY4Yzc5NTZhNDhhfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "agency": {
+      "tags": []
+    },
+    "agency-e2e": {
+      "tags": [],
+      "implicitDependencies": ["agency"]
+    },
+    "client": {
+      "tags": []
+    },
+    "client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["client"]
+    },
+    "curator": {
+      "tags": []
+    },
+    "curator-e2e": {
+      "tags": [],
+      "implicitDependencies": ["curator"]
+    }
+  }
+}
