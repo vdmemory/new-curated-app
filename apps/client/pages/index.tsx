@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
+import { TestingGreeter } from '@new-curated-app/testing/greeter';
 
 const StyledPage = styled.div`
     .page {
         background-color: wheat;
     }
-    background-color: red;
+    background-color: #2d5327;
 `;
 
 export function Index() {
@@ -15,6 +16,7 @@ export function Index() {
      */
     return (
         <StyledPage className="page">
+            <TestingGreeter title="Welcome to TestingGreeter!" />
             <p className="page">
                 Thank you for using and showing some ♥ for Nx.
             </p>

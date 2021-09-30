@@ -1,5 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import wrapperStoreRedux from '../store';
+
 import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -17,4 +19,4 @@ function CustomApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default CustomApp;
+export default wrapperStoreRedux.withRedux(CustomApp);
