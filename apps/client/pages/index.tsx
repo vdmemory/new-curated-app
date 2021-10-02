@@ -1,12 +1,26 @@
 import styled from '@emotion/styled';
-import { TestingGreeter } from '@new-curated-app/testing/greeter';
+import { configureStore } from '@reduxjs/toolkit';
 
 const StyledPage = styled.div`
     .page {
         background-color: wheat;
     }
-    background-color: #2d5327;
+    .title-page {
+        color: blueviolet;
+    }
+    background-color: #9bc595;
 `;
+
+type Props = {
+    title: string;
+    description: string;
+    currStep?: number;
+};
+
+const configComponent: Props = {
+    title: 'The Nx',
+    description: 'Thank you for using and showing some ♥ for Nx.',
+};
 
 export function Index() {
     /*
@@ -14,12 +28,12 @@ export function Index() {
      *
      * Note: The corresponding styles are in the ./index.@emotion/styled file.
      */
+
+    const { title, description } = configComponent;
     return (
         <StyledPage className="page">
-            <TestingGreeter title="Welcome to TestingGreeter!" />
-            <p className="page">
-                Thank you for using and showing some ♥ for Nx.
-            </p>
+            <h2 className="title-page">{title}</h2>
+            <p className="page">{description}</p>
         </StyledPage>
     );
 }
