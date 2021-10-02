@@ -17,10 +17,28 @@ type Props = {
     currStep?: number;
 };
 
+type List = {
+    name: string;
+    id: number;
+}[];
+
 const configComponent: Props = {
     title: 'The Nx',
     description: 'Thank you for using and showing some ♥ for Nx.',
 };
+
+const lists: List = [
+    {
+        name: 'react',
+        id: 1,
+    },
+    { name: 'redux', id: 2 },
+    {
+        name: 'typescript',
+        id: 3,
+    },
+    { name: 'next', id: 4 },
+];
 
 export function Index() {
     /*
@@ -34,6 +52,11 @@ export function Index() {
         <StyledPage className="page">
             <h2 className="title-page">{title}</h2>
             <p className="page">{description}</p>
+            <ul>
+                {lists.map(({ name, id }): JSX.Element => {
+                    return <li key={id}>{name}</li>;
+                })}
+            </ul>
         </StyledPage>
     );
 }
