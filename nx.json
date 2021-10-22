@@ -51,6 +51,9 @@
         },
         "setup-redux": {
             "tags": []
+        },
+        "shared-ui-components": {
+            "tags": []
         }
     }
 }

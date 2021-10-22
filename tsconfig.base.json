@@ -15,7 +15,10 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@new-curated-app/setup/redux": ["libs/setup/redux/src/index.ts"]
+            "@new-curated-app/setup/redux": ["libs/setup/redux/src/index.ts"],
+            "@new-curated-app/shared/ui-components": [
+                "libs/shared/ui-components/src/index.ts"
+            ]
         }
     },
     "exclude": ["node_modules", "tmp"]
