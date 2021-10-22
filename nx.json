@@ -54,6 +54,10 @@
         },
         "shared-ui-components": {
             "tags": []
+        },
+        "shared-ui-components-e2e": {
+            "tags": [],
+            "implicitDependencies": ["shared-ui-components"]
         }
     }
 }

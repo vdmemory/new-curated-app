@@ -5,6 +5,7 @@ export interface SharedUiComponentsProps {}
 
 const StyledSharedUiComponents = styled.div`
     color: pink;
+    background-color: blue;
 `;
 
 export function SharedUiComponents(props: SharedUiComponentsProps) {

@@ -283,6 +283,66 @@
                         "jestConfig": "libs/shared/ui-components/jest.config.js",
                         "passWithNoTests": true
                     }
+                },
+                "storybook": {
+                    "executor": "@nrwl/storybook:storybook",
+                    "options": {
+                        "uiFramework": "@storybook/react",
+                        "port": 4400,
+                        "config": {
+                            "configFolder": "libs/shared/ui-components/.storybook"
+                        }
+                    },
+                    "configurations": {
+                        "ci": {
+                            "quiet": true
+                        }
+                    }
+                },
+                "build-storybook": {
+                    "executor": "@nrwl/storybook:build",
+                    "outputs": ["{options.outputPath}"],
+                    "options": {
+                        "uiFramework": "@storybook/react",
+                        "outputPath": "dist/storybook/shared-ui-components",
+                        "config": {
+                            "configFolder": "libs/shared/ui-components/.storybook"
+                        }
+                    },
+                    "configurations": {
+                        "ci": {
+                            "quiet": true
+                        }
+                    }
+                }
+            }
+        },
+        "shared-ui-components-e2e": {
+            "root": "apps/shared-ui-components-e2e",
+            "sourceRoot": "apps/shared-ui-components-e2e/src",
+            "projectType": "application",
+            "targets": {
+                "e2e": {
+                    "executor": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/shared-ui-components-e2e/cypress.json",
+                        "devServerTarget": "shared-ui-components:storybook",
+                        "tsConfig": "apps/shared-ui-components-e2e/tsconfig.json"
+                    },
+                    "configurations": {
+                        "ci": {
+                            "devServerTarget": "shared-ui-components:storybook:ci"
+                        }
+                    }
+                },
+                "lint": {
+                    "executor": "@nrwl/linter:eslint",
+                    "outputs": ["{options.outputFile}"],
+                    "options": {
+                        "lintFilePatterns": [
+                            "apps/shared-ui-components-e2e/**/*.{js,ts}"
+                        ]
+                    }
                 }
             }
         }

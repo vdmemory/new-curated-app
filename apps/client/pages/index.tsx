@@ -1,15 +1,17 @@
 import styled from '@emotion/styled';
 import { configureStore } from '@reduxjs/toolkit';
 
-const StyledPage = styled.div`
-    .page {
-        background-color: wheat;
-    }
-    .title-page {
-        color: blueviolet;
-    }
-    background-color: #9bc595;
-`;
+import { SharedUiComponents } from '@new-curated-app/shared/ui-components';
+
+// const StyledPage = styled.div`
+//     .page {
+//         background-color: wheat;
+//     }
+//     .title-page {
+//         color: blueviolet;
+//     }
+//     background-color: #9bc595;
+// `;
 
 type Props = {
     title: string;
@@ -49,15 +51,18 @@ export function Index() {
 
     const { title, description } = configComponent;
     return (
-        <StyledPage className="page">
-            <h2 className="title-page">{title}</h2>
-            <p className="page">{description}</p>
+        // <StyledPage>
+        <>
+            <SharedUiComponents />
+            <h2>{title}</h2>
+            <p>{description}</p>
             <ul>
                 {lists.map(({ name, id }): JSX.Element => {
                     return <li key={id}>{name}</li>;
                 })}
             </ul>
-        </StyledPage>
+        </>
+        // </StyledPage>
     );
 }
 

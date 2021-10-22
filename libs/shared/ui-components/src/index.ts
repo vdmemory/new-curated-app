@@ -1,1 +1,1 @@
-export * from './lib/shared-ui-components';
+export { default as SharedUiComponents } from './lib/shared-ui-components';
