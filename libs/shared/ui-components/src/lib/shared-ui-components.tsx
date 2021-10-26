@@ -12,6 +12,7 @@ export function SharedUiComponents(props: SharedUiComponentsProps) {
     return (
         <StyledSharedUiComponents>
             <h1>Welcome to SharedUiComponents!</h1>
+            <button onClick={() => console.log('hello world')}>Click!</button>
         </StyledSharedUiComponents>
     );
 }
