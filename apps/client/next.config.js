@@ -11,6 +11,7 @@ const nextConfig = {
         svgr: false,
     },
     webpack5: true,
+    target: 'serverless',
 };
 
 module.exports = withNx(nextConfig);
