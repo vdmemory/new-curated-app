@@ -52,6 +52,9 @@
         "setup-redux": {
             "tags": []
         },
+        "shared-auth": {
+            "tags": []
+        },
         "shared-ui-components": {
             "tags": []
         },
