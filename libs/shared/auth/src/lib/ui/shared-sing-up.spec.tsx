@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Layout from './layout';
+import SharedSingUp from './shared-sing-up';
 
-describe('Layout', () => {
+describe('SharedSingUp', () => {
     it('should render successfully', () => {
-        const { baseElement } = render(<Layout>Hello</Layout>);
+        const { baseElement } = render(<SharedSingUp />);
         expect(baseElement).toBeTruthy();
     });
 });

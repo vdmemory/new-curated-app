@@ -10,6 +10,7 @@ const StyledNav = styled.div`
     justify-content: center;
     font-size: 18px;
     text-transform: uppercase;
+    border-bottom: 1px solid lightgrey;
 
     a {
         padding: 5px;

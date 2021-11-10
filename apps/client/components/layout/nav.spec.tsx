@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Nav from './Nav';
+import Nav from './nav';
 
 describe('Nav', () => {
     it('should render successfully', () => {

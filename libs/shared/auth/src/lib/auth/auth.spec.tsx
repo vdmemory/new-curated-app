@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import SharedSingUp from './SharedSingUp';
+import Auth from './auth';
 
-describe('SharedSingUp', () => {
+describe('Auth', () => {
     it('should render successfully', () => {
-        const { baseElement } = render(<SharedSingUp />);
+        const { baseElement } = render(<Auth />);
         expect(baseElement).toBeTruthy();
     });
 });

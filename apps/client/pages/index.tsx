@@ -4,9 +4,17 @@ import { configureStore } from '@reduxjs/toolkit';
 const StyledPage = styled.div`
     text-align: center;
     background-color: #eff9ed;
-    border-radius: 10px;
+    border-radius: 3px;
     padding: 10px 15px;
-    margin: 5px;
+    margin: 15px 0;
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 22px;
+    }
 
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
