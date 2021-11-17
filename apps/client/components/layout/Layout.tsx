@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 import Head from 'next/head';
 
-import Nav from './nav';
+import Nav from './Nav';
 
 const StyledLayout = styled.div`
     color: #33191e;
     padding: 0 15px;
 `;
 
-export function Layout({ children }) {
+export default function Layout({ children }) {
     return (
         <>
             <Head>
@@ -26,5 +26,3 @@ export function Layout({ children }) {
         </>
     );
 }
-
-export default Layout;

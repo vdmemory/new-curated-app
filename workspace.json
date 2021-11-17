@@ -238,30 +238,6 @@
                 }
             }
         },
-        "setup-redux": {
-            "root": "libs/setup/redux",
-            "sourceRoot": "libs/setup/redux/src",
-            "projectType": "library",
-            "targets": {
-                "lint": {
-                    "executor": "@nrwl/linter:eslint",
-                    "outputs": ["{options.outputFile}"],
-                    "options": {
-                        "lintFilePatterns": [
-                            "libs/setup/redux/**/*.{ts,tsx,js,jsx}"
-                        ]
-                    }
-                },
-                "test": {
-                    "executor": "@nrwl/jest:jest",
-                    "outputs": ["coverage/libs/setup/redux"],
-                    "options": {
-                        "jestConfig": "libs/setup/redux/jest.config.js",
-                        "passWithNoTests": true
-                    }
-                }
-            }
-        },
         "shared-auth": {
             "root": "libs/shared/auth",
             "sourceRoot": "libs/shared/auth/src",

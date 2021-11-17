@@ -49,9 +49,6 @@
             "tags": [],
             "implicitDependencies": ["curator"]
         },
-        "setup-redux": {
-            "tags": []
-        },
         "shared-auth": {
             "tags": []
         },

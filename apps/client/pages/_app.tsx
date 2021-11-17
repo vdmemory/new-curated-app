@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
-import wrapperStoreRedux from '../store';
+import { wrapper } from '../setup';
 
-import { Layout } from '../components/layout';
+import { Layout } from '../components';
 
 function CustomApp({ Component, pageProps }: AppProps) {
     return (
@@ -11,4 +11,4 @@ function CustomApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default wrapperStoreRedux.withRedux(CustomApp);
+export default wrapper.withRedux(CustomApp);

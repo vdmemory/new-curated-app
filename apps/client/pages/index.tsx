@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import { configureStore } from '@reduxjs/toolkit';
 
 const StyledPage = styled.div`
@@ -54,8 +55,9 @@ const configComponent: Props = {
     description: 'Thank you for using and showing some ♥ for Nx.',
 };
 
-export function IndexPage() {
+export default function IndexPage() {
     const { title, description } = configComponent;
+
     return (
         <StyledPage>
             <h2>{title}</h2>
@@ -63,5 +65,3 @@ export function IndexPage() {
         </StyledPage>
     );
 }
-
-export default IndexPage;

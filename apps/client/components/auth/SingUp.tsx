@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
-// import { Auth } from '../..';
+import { getUser } from './store/slice';
 
 /* eslint-disable-next-line */
-export interface SharedSingUpProps {}
+export interface SingUpProps {}
 
 type FormData = {
     email: string;
@@ -53,7 +54,16 @@ const StyledSingUp = styled.div`
     }
 `;
 
-export function SharedSingUp(props: SharedSingUpProps) {
+function SingUp(props: SingUpProps) {
+    const dispatch = useDispatch();
+    const state = useSelector(state => state);
+
+    console.log(state);
+
+    useEffect(() => {
+        dispatch(getUser());
+    }, [dispatch]);
+
     const {
         register,
         handleSubmit,
@@ -78,7 +88,7 @@ export function SharedSingUp(props: SharedSingUpProps) {
                     placeholder="Email Address"
                 />
                 {errors.email?.type === 'pattern' && (
-                    <span>Contact's email (format: xxx@xxx.xxx)</span>
+                    <span>{`Contact's email (format: xxx@xxx.xxx)`}</span>
                 )}
 
                 <input
@@ -102,4 +112,4 @@ export function SharedSingUp(props: SharedSingUpProps) {
     );
 }
 
-export default SharedSingUp;
+export default SingUp;

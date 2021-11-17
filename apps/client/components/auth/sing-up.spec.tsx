@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Layout from './Layout';
+import SingUp from './SingUp';
 
-describe('Layout', () => {
+describe('SingUp', () => {
     it('should render successfully', () => {
-        const { baseElement } = render(<Layout>Hello</Layout>);
+        const { baseElement } = render(<SingUp />);
         expect(baseElement).toBeTruthy();
     });
 });

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Head from 'next/head';
 
-import { SharedSingUp } from '@new-curated-app/shared/auth';
+import SingUp from '../components/auth/SingUp';
 
 /* eslint-disable-next-line */
 export interface SignUpProps {}
@@ -38,18 +38,15 @@ const StyledSignUp = styled.div`
     }
 `;
 
-export function SignupPage(props: SignUpProps) {
+export default function SignUpPage(props: SignUpProps) {
     return (
         <>
             <Head>
                 <title>Sign up</title>
             </Head>
             <StyledSignUp>
-                <h1>Welcome to SignUp!</h1>
-                <SharedSingUp />
+                <SingUp />
             </StyledSignUp>
         </>
     );
 }
-
-export default SignupPage;

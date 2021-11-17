@@ -29,7 +29,7 @@ const StyledNav = styled.div`
     }
 `;
 
-export function Nav(props: NavProps) {
+export default function Nav(props: NavProps) {
     return (
         <StyledNav>
             <Link passHref href="/">
@@ -41,5 +41,3 @@ export function Nav(props: NavProps) {
         </StyledNav>
     );
 }
-
-export default Nav;
