@@ -1,10 +1,10 @@
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 
-import SingUp from './SingUp';
+// import SingUp from './SingUp';
 
-describe('SingUp', () => {
-    it('should render successfully', () => {
-        const { baseElement } = render(<SingUp />);
-        expect(baseElement).toBeTruthy();
-    });
-});
+// describe('SingUp', () => {
+//     it('should render successfully', () => {
+//         const { baseElement } = render(<SingUp />);
+//         expect(baseElement).toBeTruthy();
+//     });
+// });
