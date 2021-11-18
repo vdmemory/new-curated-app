@@ -37,8 +37,8 @@ export default function Nav(props: NavProps) {
             <Link passHref href={routes.home}>
                 home
             </Link>
-            <Link passHref href={routes.signup}>
-                sign-up
+            <Link passHref href={routes.signin}>
+                sign-in
             </Link>
         </StyledNav>
     );

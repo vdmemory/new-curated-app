@@ -10,9 +10,9 @@ const pass = 'E4YE!mxFaFAADDY';
 const name = 'vdmemory';
 
 /* eslint-disable-next-line */
-export interface SingInProps {}
+export interface SignInProps {}
 
-const StyledSingIn = styled.div`
+const StyledSignIn = styled.div`
     color: #075237;
     display: flex;
     justify-content: center;
@@ -54,7 +54,7 @@ const StyledSingIn = styled.div`
     }
 `;
 
-function SingIn(props: SingInProps) {
+function SignIn(props: SignInProps) {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
 
@@ -71,7 +71,7 @@ function SingIn(props: SingInProps) {
     });
 
     return (
-        <StyledSingIn>
+        <StyledSignIn>
             <form onSubmit={onSubmit}>
                 <label>Your Registration Details</label>
 
@@ -101,10 +101,10 @@ function SingIn(props: SingInProps) {
                     </span>
                 )}
 
-                <button>Sing Up</button>
+                <button>Sign In</button>
             </form>
-        </StyledSingIn>
+        </StyledSignIn>
     );
 }
 
-export default SingIn;
+export default SignIn;
