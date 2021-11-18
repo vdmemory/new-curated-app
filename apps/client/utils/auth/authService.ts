@@ -7,6 +7,7 @@ const setRequestToken = (token: string) =>
 const setSessionId = (sessionId: string) =>
     localStorage.setItem('sessionId', sessionId);
 
+//TODO: переписать на класс
 const authService = {
     getToken: getRequestToken,
     setToken: setRequestToken,

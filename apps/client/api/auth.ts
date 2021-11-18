@@ -6,6 +6,7 @@ const api = axios.create({
 
 const API_KEY_DB = 'dfd85164f101e8e2441b61e7280e6edf';
 
+// TODO: переписать константы
 export const ENDPOINTS = {
     requestToken: `/authentication/token/new?api_key=${API_KEY_DB}`,
     createSessionWithLogin: `/authentication/token/validate_with_login?api_key=${API_KEY_DB}`,

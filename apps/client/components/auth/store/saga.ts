@@ -24,13 +24,13 @@ function* createSessionWithLoginSaga({
         const data = yield call(createSessionWithLogin, dataCreateSession);
         const { sessionId } = yield call(createSession, data.requestToken);
         yield put(createSessionSuccess(data));
-        yield authService.setToken(data.requestToken);
-        yield authService.setSessionId(sessionId);
+        yield call(authService.setToken, data.requestToken);
+        yield call(authService.setSessionId, sessionId);
     } catch (e) {
         yield put(createSessionFailure(e.response.data.status_message));
         yield delay(3000);
         yield put(createSessionFailure(''));
-        authService.removeToken();
+        yield call(authService.removeToken);
     }
 }
 
