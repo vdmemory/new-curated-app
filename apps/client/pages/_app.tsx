@@ -1,20 +1,14 @@
 import { AppProps } from 'next/app';
-import Head from 'next/head';
-import wrapperStoreRedux from '../store';
+import { wrapper } from '../setup';
+
+import { Layout } from '../components';
 
 function CustomApp({ Component, pageProps }: AppProps) {
     return (
-        <>
-            <Head>
-                <title>Welcome to client!</title>
-            </Head>
-            <div>
-                <main>
-                    <Component {...pageProps} />
-                </main>
-            </div>
-        </>
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
     );
 }
 
-export default wrapperStoreRedux.withRedux(CustomApp);
+export default wrapper.withRedux(CustomApp);

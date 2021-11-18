@@ -238,9 +238,9 @@
                 }
             }
         },
-        "setup-redux": {
-            "root": "libs/setup/redux",
-            "sourceRoot": "libs/setup/redux/src",
+        "shared-auth": {
+            "root": "libs/shared/auth",
+            "sourceRoot": "libs/shared/auth/src",
             "projectType": "library",
             "targets": {
                 "lint": {
@@ -248,15 +248,15 @@
                     "outputs": ["{options.outputFile}"],
                     "options": {
                         "lintFilePatterns": [
-                            "libs/setup/redux/**/*.{ts,tsx,js,jsx}"
+                            "libs/shared/auth/**/*.{ts,tsx,js,jsx}"
                         ]
                     }
                 },
                 "test": {
                     "executor": "@nrwl/jest:jest",
-                    "outputs": ["coverage/libs/setup/redux"],
+                    "outputs": ["coverage/libs/shared/auth"],
                     "options": {
-                        "jestConfig": "libs/setup/redux/jest.config.js",
+                        "jestConfig": "libs/shared/auth/jest.config.js",
                         "passWithNoTests": true
                     }
                 }

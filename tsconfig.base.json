@@ -16,6 +16,7 @@
         "baseUrl": ".",
         "paths": {
             "@new-curated-app/setup/redux": ["libs/setup/redux/src/index.ts"],
+            "@new-curated-app/shared/auth": ["libs/shared/auth/src/index.ts"],
             "@new-curated-app/shared/ui-components": [
                 "libs/shared/ui-components/src/index.ts"
             ]

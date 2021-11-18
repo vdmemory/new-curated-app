@@ -49,7 +49,7 @@
             "tags": [],
             "implicitDependencies": ["curator"]
         },
-        "setup-redux": {
+        "shared-auth": {
             "tags": []
         },
         "shared-ui-components": {

@@ -1,9 +1,9 @@
 module.exports = {
-    displayName: 'setup-redux',
+    displayName: 'shared-auth',
     preset: '../../../jest.preset.js',
     transform: {
         '^.+\\.[tj]sx?$': 'babel-jest',
     },
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-    coverageDirectory: '../../../coverage/libs/setup/redux',
+    coverageDirectory: '../../../coverage/libs/shared/auth',
 };
