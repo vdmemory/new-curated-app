@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 
-import { configureStore } from '@reduxjs/toolkit';
-
 const StyledPage = styled.div`
     text-align: center;
     background-color: #eff9ed;

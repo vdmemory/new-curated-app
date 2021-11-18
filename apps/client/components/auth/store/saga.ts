@@ -1,23 +1,39 @@
-import { call, put, takeLatest } from '@redux-saga/core/effects';
-import axios from 'axios';
-import { getUser, setUser } from './slice';
+import { call, put, takeLatest, delay } from '@redux-saga/core/effects';
 
-function requestGetUser() {
-    return axios.request({
-        method: 'get',
-        url: 'https://my-json-server.typicode.com/atothey/demo/user',
-    });
-}
+import {
+    createSessionRequest,
+    createSessionSuccess,
+    createSessionFailure,
+} from './slice';
+import {
+    createRequestToken,
+    createSessionWithLogin,
+    createSession,
+} from '../../../api/auth';
+import { authService } from '../../../utils';
 
-function* handleGetUser() {
+function* createSessionWithLoginSaga({
+    payload,
+}: ReturnType<typeof createSessionRequest>) {
     try {
-        const { data } = yield call(requestGetUser);
-        yield put(setUser({ ...data }));
-    } catch (error) {
-        console.log(error);
+        const requestToken = yield call(createRequestToken);
+        const dataCreateSession = {
+            ...payload,
+            ...requestToken,
+        };
+        const data = yield call(createSessionWithLogin, dataCreateSession);
+        const { sessionId } = yield call(createSession, data.requestToken);
+        yield put(createSessionSuccess(data));
+        yield authService.setToken(data.requestToken);
+        yield authService.setSessionId(sessionId);
+    } catch (e) {
+        yield put(createSessionFailure(e.response.data.status_message));
+        yield delay(3000);
+        yield put(createSessionFailure(''));
+        authService.removeToken();
     }
 }
 
 export default function* watcherSaga() {
-    yield takeLatest(getUser.type, handleGetUser);
+    yield takeLatest(createSessionRequest.type, createSessionWithLoginSaga);
 }

@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 import Head from 'next/head';
 
-import SingUp from '../components/auth/SingUp';
+import SingIn from '../components/auth/SingIn';
 
 /* eslint-disable-next-line */
-export interface SignUpProps {}
+export interface SingInProps {}
 
-const StyledSignUp = styled.div`
+const StyledSingIn = styled.div`
     color: #33191e;
     text-align: center;
 
@@ -38,15 +38,15 @@ const StyledSignUp = styled.div`
     }
 `;
 
-export default function SignUpPage(props: SignUpProps) {
+export default function SignUpPage(props: SingInProps) {
     return (
         <>
             <Head>
-                <title>Sign up</title>
+                <title>Sign in</title>
             </Head>
-            <StyledSignUp>
-                <SingUp />
-            </StyledSignUp>
+            <StyledSingIn>
+                <SingIn />
+            </StyledSingIn>
         </>
     );
 }

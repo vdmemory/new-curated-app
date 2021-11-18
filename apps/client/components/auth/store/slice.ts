@@ -1,18 +1,38 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
+
+import { RequestToken, FormData } from '../../../api/auth';
 
 const userSlice = createSlice({
     name: 'user',
 
-    initialState: {},
+    initialState: {
+        signInError: null as null | string,
+        signInLoading: false as boolean,
+        requestToken: {} as RequestToken,
+    },
 
     reducers: {
-        getUser(state) {
-            return state;
+        createSessionRequest(state, action: PayloadAction<FormData>) {
+            return {
+                ...state,
+                signInLoading: true,
+            };
         },
-        setUser(state, action) {
-            const userData = action.payload;
-            return { ...state, ...userData };
+        createSessionSuccess(state, { payload }: { payload: RequestToken }) {
+            return {
+                ...state,
+                signInLoading: false,
+                requestToken: payload,
+            };
+        },
+        createSessionFailure(state, { payload }: { payload: string }) {
+            return {
+                ...state,
+                signInLoading: false,
+                requestToken: { requestToken: '' },
+                signInError: payload,
+            };
         },
     },
 
@@ -27,5 +47,9 @@ const userSlice = createSlice({
     },
 });
 
-export const { getUser, setUser } = userSlice.actions;
+export const {
+    createSessionRequest,
+    createSessionSuccess,
+    createSessionFailure,
+} = userSlice.actions;
 export default userSlice;

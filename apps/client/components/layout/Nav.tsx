@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+import { routes } from '../../routes';
+
 /* eslint-disable-next-line */
 export interface NavProps {}
 
@@ -32,10 +34,10 @@ const StyledNav = styled.div`
 export default function Nav(props: NavProps) {
     return (
         <StyledNav>
-            <Link passHref href="/">
+            <Link passHref href={routes.home}>
                 home
             </Link>
-            <Link passHref href="/sign-up">
+            <Link passHref href={routes.signup}>
                 sign-up
             </Link>
         </StyledNav>

@@ -3,20 +3,20 @@ import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
-import { getUser } from './store/slice';
+import { createSessionRequest } from './store/slice';
+import { FormData } from '../../api/auth';
+
+const pass = 'E4YE!mxFaFAADDY';
+const name = 'vdmemory';
 
 /* eslint-disable-next-line */
-export interface SingUpProps {}
+export interface SingInProps {}
 
-type FormData = {
-    email: string;
-    password: string;
-};
-
-const StyledSingUp = styled.div`
+const StyledSingIn = styled.div`
     color: #075237;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 
     form {
         display: flex;
@@ -54,15 +54,11 @@ const StyledSingUp = styled.div`
     }
 `;
 
-function SingUp(props: SingUpProps) {
+function SingIn(props: SingInProps) {
     const dispatch = useDispatch();
     const state = useSelector(state => state);
 
     console.log(state);
-
-    useEffect(() => {
-        dispatch(getUser());
-    }, [dispatch]);
 
     const {
         register,
@@ -70,24 +66,23 @@ function SingUp(props: SingUpProps) {
         formState: { errors },
     } = useForm<FormData>();
 
-    const onSubmit = handleSubmit(({ email, password }) => {
-        console.log(email, password);
+    const onSubmit = handleSubmit(values => {
+        dispatch(createSessionRequest(values));
     });
 
     return (
-        <StyledSingUp>
+        <StyledSingIn>
             <form onSubmit={onSubmit}>
                 <label>Your Registration Details</label>
 
                 <input
-                    {...register('email', {
+                    {...register('userName', {
                         required: true,
-                        pattern: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
                     })}
-                    type="email"
-                    placeholder="Email Address"
+                    type="text"
+                    placeholder="User Name"
                 />
-                {errors.email?.type === 'pattern' && (
+                {errors.userName?.type === 'pattern' && (
                     <span>{`Contact's email (format: xxx@xxx.xxx)`}</span>
                 )}
 
@@ -108,8 +103,8 @@ function SingUp(props: SingUpProps) {
 
                 <button>Sing Up</button>
             </form>
-        </StyledSingUp>
+        </StyledSingIn>
     );
 }
 
-export default SingUp;
+export default SingIn;
