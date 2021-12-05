@@ -1,20 +1,10 @@
-const getRequestToken = () => localStorage.getItem('requestToken');
-const getSessionId = () => localStorage.getItem('sessionId');
-const removeRequestToken = () => localStorage.removeItem('requestToken');
-const removeSessionId = () => localStorage.removeItem('sessionId');
-const setRequestToken = (token: string) =>
-    localStorage.setItem('requestToken', token);
-const setSessionId = (sessionId: string) =>
-    localStorage.setItem('sessionId', sessionId);
-
-//TODO: переписать на класс
-const authService = {
-    getToken: getRequestToken,
-    setToken: setRequestToken,
-    removeToken: removeRequestToken,
-    setSessionId,
-    getSessionId,
-    removeSessionId,
-};
-
-export default authService;
+export default class AuthService {
+    getToken = (): string => localStorage.getItem('requestToken');
+    setToken = (token: string): void =>
+        localStorage.setItem('requestToken', token);
+    removeToken = (): void => localStorage.removeItem('requestToken');
+    setSessionId = (sessionId: string): void =>
+        localStorage.setItem('sessionId', sessionId);
+    getSessionId = (): string => localStorage.getItem('sessionId');
+    removeSessionId = (): void => localStorage.removeItem('sessionId');
+}

@@ -10,7 +10,9 @@ import {
     createSessionWithLogin,
     createSession,
 } from '../../../api/auth';
-import { authService } from '../../../utils';
+import { AuthService } from '../../../utils';
+
+const authService = new AuthService();
 
 function* createSessionWithLoginSaga({
     payload,

@@ -6,12 +6,9 @@ const api = axios.create({
 
 const API_KEY_DB = 'dfd85164f101e8e2441b61e7280e6edf';
 
-// TODO: переписать константы
-export const ENDPOINTS = {
-    requestToken: `/authentication/token/new?api_key=${API_KEY_DB}`,
-    createSessionWithLogin: `/authentication/token/validate_with_login?api_key=${API_KEY_DB}`,
-    createSession: `/authentication/session/new?api_key=${API_KEY_DB}`,
-};
+export const REQUEST_TOKEN = `/authentication/token/new?api_key=${API_KEY_DB}`;
+export const CREATE_SESSION_WITH_LOGIN = `/authentication/token/validate_with_login?api_key=${API_KEY_DB}`;
+export const CREATE_SESSION = `/authentication/session/new?api_key=${API_KEY_DB}`;
 
 export type FetchRequestToken = {
     success: boolean;
@@ -50,7 +47,7 @@ export class SessionId {
 }
 
 export const createRequestToken = () =>
-    api.get(ENDPOINTS.requestToken).then(({ data }) => new RequestToken(data));
+    api.get(REQUEST_TOKEN).then(({ data }) => new RequestToken(data));
 
 export const createSessionWithLogin = ({
     userName,
@@ -58,7 +55,7 @@ export const createSessionWithLogin = ({
     requestToken,
 }: UserData) =>
     api
-        .post(ENDPOINTS.createSessionWithLogin, {
+        .post(CREATE_SESSION_WITH_LOGIN, {
             ...{
                 username: userName,
                 password,
@@ -69,7 +66,7 @@ export const createSessionWithLogin = ({
 
 export const createSession = (requestToken: string) =>
     api
-        .post(ENDPOINTS.createSession, {
+        .post(CREATE_SESSION, {
             ...{
                 request_token: requestToken,
             },

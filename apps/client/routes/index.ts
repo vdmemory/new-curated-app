@@ -1,1 +1,2 @@
-export { default as routes } from './routes';
+export const HOME = '/';
+export const SINGIN = '/sign-in';
