@@ -28,12 +28,12 @@
         ]
     },
     "projects": {
-        "agency": {
+        "authorization": {
             "tags": []
         },
-        "agency-e2e": {
+        "authorization-e2e": {
             "tags": [],
-            "implicitDependencies": ["agency"]
+            "implicitDependencies": ["authorization"]
         },
         "client": {
             "tags": []
@@ -41,13 +41,6 @@
         "client-e2e": {
             "tags": [],
             "implicitDependencies": ["client"]
-        },
-        "curator": {
-            "tags": []
-        },
-        "curator-e2e": {
-            "tags": [],
-            "implicitDependencies": ["curator"]
         },
         "shared-auth": {
             "tags": []
